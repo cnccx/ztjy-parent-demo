@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      # 是否启用config server
+      enabled: true
+      uri: http://debug-config-server.szy.net/
+      name: rabbitmq-config,zookeeper-config,ztjy-xxxx-server
+      fail-fast: true
+      label: develop

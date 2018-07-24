@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>snapshots</id>
+            <username>deployment</username>
+            <password>1qaz@WSX</password>
+        </server>
+        <server>
+            <id>releases</id>
+            <username>deployment</username>
+            <password>1qaz@WSX</password>
+        </server>
+        <server>
+            <id>3rd party</id>
+            <username>deployment</username>
+            <password>1qaz@WSX</password>
+        </server>
+        <server>
+            <id>nexus</id>
+            <username>deployment</username>
+            <password>1qaz@WSX</password>
+        </server>
+    </servers>
+
+    <mirrors>
+
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>szy</id>
+            <repositories>
+                <repository>
+                    <id>nexus</id>
+                    <url>http://repo.vi-zone.net/content/groups/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>3rd party</id>
+                    <url>http://repo.vi-zone.net/content/repositories/thirdparty/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>nexus</id>
+                    <url>http://repo.vi-zone.net/content/groups/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>szy</activeProfile>
+    </activeProfiles>
+
+</settings>

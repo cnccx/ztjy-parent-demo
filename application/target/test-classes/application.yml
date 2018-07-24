@@ -1,0 +1,61 @@
+debug: false
+parent:
+  redis:
+    enabled: true
+
+management:
+  health:
+    redis:
+      enabled: false
+
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:mysql://debug-mysql.szy.net:3306/testdb1?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: test
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  redis:
+    host: 172.16.202.40
+    port: 6379
+    database: 8
+    password:
+
+  dubbo:
+      application:
+        name: ztjy-xxxx-server
+        registry:
+          address: zookeeper://zookeeper.szy.net:2181
+      provider:
+        group: debug
+        version: 4.0.0
+        delay: -1
+        retries: 0
+        threads: 500
+      consumer:
+        group: debug
+        version: 4.0.0
+        check: false
+        mock: force
+      protocol:
+        name: dubbo
+        port: 60002
+  
+  rabbitmq:
+      host: 10.1.30.73
+      port: 5672
+      username: superrd
+      password: superrd
+
+myserver:
+  ons:
+    consumer-id: CID_schoolFeeds_debug
+    product-id: PID_schoolFeeds_debug
+    access-key: 06xxZ11yge6LekDx
+    secret-key: PMbyrM2DZC3QIu586BTyGQCBS5l3nt
